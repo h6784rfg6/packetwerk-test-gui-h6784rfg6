@@ -1,1 +1,4 @@
 <div *ngFor="let user of users">{{user.name}}</div>
+<ag-grid-angular #agGrid class="users-grid ag-fresh"
+                 [gridOptions]="gridOptions">
+</ag-grid-angular>

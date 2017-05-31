@@ -10,16 +10,16 @@ export const routerConfig: Routes = [
     path: 'users',
     component: UsersComponent
   }, {
-    path: 'users.user',
+    path: 'users/user',
     component: UserComponent
   }, {
-    path: 'users.user.albums',
+    path: 'users/user/albums',
     component: AlbumsComponent
   }, {
-    path: 'users.user.albums.album',
+    path: 'users/user/albums/album',
     component: AlbumComponent
   }, {
-    path: 'users.user.photos',
+    path: 'users/user/photos',
     component: PhotosComponent
   }, {
     path: '',
