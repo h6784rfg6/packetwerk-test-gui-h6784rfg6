@@ -11,6 +11,7 @@ import {UsersComponent} from "./components/users/users.component";
 import {AlbumsComponent} from "./components/albums/albums.component";
 import {AlbumComponent} from "./components/album/album.component";
 import {PhotosComponent} from "./components/photos/photos.component";
+import {UserService} from "./interfaces/user.service";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import {PhotosComponent} from "./components/photos/photos.component";
     HttpModule,
     RouterModule.forRoot(routerConfig)
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
