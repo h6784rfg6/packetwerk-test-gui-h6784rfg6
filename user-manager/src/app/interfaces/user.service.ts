@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Headers, Http, Response} from '@angular/http';
+import {Headers, Http, Response, URLSearchParams} from '@angular/http';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
 
@@ -11,6 +11,17 @@ export class UserService {
 
   getUsers() {
     return this.http.get(this.root + "/users")
+      .map((response:Response) => {
+        return response.json();
+      })
+      .catch(UserService.handleError);
+  }
+
+  getUser(userId: string) {
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('id', userId);
+
+    return this.http.get(this.root + "/users", {search: params})
       .map((response:Response) => {
         return response.json();
       })
