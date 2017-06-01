@@ -8,7 +8,6 @@ import { RouterModule } from '@angular/router';
 import { routerConfig } from './routing/router.config';
 import {UserComponent} from './components/user/user.component';
 import {UsersComponent} from './components/users/users.component';
-import {AlbumsComponent} from './components/albums/albums.component';
 import {AlbumComponent} from './components/album/album.component';
 import {PhotosComponent} from './components/photos/photos.component';
 import {UserService} from './interfaces/user.service';
@@ -18,7 +17,7 @@ import {DataService} from './interfaces/data.service';
 
 @NgModule({
   declarations: [
-    AppComponent, UserComponent, UsersComponent, AlbumsComponent, AlbumComponent, PhotosComponent, UserActionsComponent
+    AppComponent, UserComponent, UsersComponent, AlbumComponent, PhotosComponent, UserActionsComponent
   ],
   imports: [
     BrowserModule,

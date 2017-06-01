@@ -17,11 +17,22 @@ export class UserService {
       .catch(UserService.handleError);
   }
 
-  getUser(userId: string) {
+  getUser(userId: number) {
     let params: URLSearchParams = new URLSearchParams();
-    params.set('id', userId);
+    params.set('id', userId.toString());
 
     return this.http.get(this.root + "/users", {search: params})
+      .map((response:Response) => {
+        return response.json();
+      })
+      .catch(UserService.handleError);
+  }
+
+  getAlbums(userId: number) {
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('userId', userId.toString());
+
+    return this.http.get(this.root + "/albums", {search: params})
       .map((response:Response) => {
         return response.json();
       })

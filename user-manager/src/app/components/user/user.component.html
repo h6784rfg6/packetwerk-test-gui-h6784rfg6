@@ -1,8 +1,63 @@
 <div class="card">
-  <div class="card-block">
+  <div class="card-block navigation-panel">
     <div class="card-text">
-      <button class="btn btn-primary" (click)="returnToPreviousState()"><i class="fa fa-arrow-left"></i>&nbsp;<span>Back</span></button>
+      <button class="btn btn-primary" (click)="returnToPreviousState()"><i
+        class="fa fa-arrow-left"></i>&nbsp;<span>Back</span></button>
     </div>
   </div>
 </div>
-<span>{{user["id"]}}</span>
+<div class="card">
+  <div class="card-block">
+    <div class="col-md-12"><h4 class="card-title">{{user?.name}}</h4></div>
+    <br>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Address</h4>
+              <div class="row">
+                <div class="col-md-3"><b>City</b></div>
+                <div class="col-md-9">{{user?.address?.city}}</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3"><b>Street</b></div>
+                <div class="col-md-9">{{user?.address?.street}}</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3"><b>Suite</b></div>
+                <div class="col-md-9">{{user?.address?.suite}}</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3"><b>Zipcode</b></div>
+                <div class="col-md-9">{{user?.address?.zipcode}}</div>
+              </div>
+              <div class="row">
+                <div class="col-md-3"><b>Latitude/<br>Longitude</b></div>
+                <div class="col-md-9">{{user?.address?.geo?.lat}}/{{user?.address?.geo?.lng}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Albums</h4>
+              <br>
+              <div class="row">
+                <div class="col-4" *ngFor="let album of albums">
+                  <div class="card album" (click)="openAlbum(album)">
+                    <div class="card-block">
+                      <h4 class="card-title">{{album?.title}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

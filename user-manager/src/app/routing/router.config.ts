@@ -3,7 +3,6 @@ import {UsersComponent} from '../components/users/users.component';
 import {UserComponent} from '../components/user/user.component';
 import {PhotosComponent} from '../components/photos/photos.component';
 import {AlbumComponent} from '../components/album/album.component';
-import {AlbumsComponent} from '../components/albums/albums.component';
 
 export const routerConfig: Routes = [
   {
@@ -13,10 +12,7 @@ export const routerConfig: Routes = [
     path: 'users/user',
     component: UserComponent
   }, {
-    path: 'users/user/albums',
-    component: AlbumsComponent
-  }, {
-    path: 'users/user/albums/album',
+    path: 'users/user/album',
     component: AlbumComponent
   }, {
     path: 'users/user/photos',
