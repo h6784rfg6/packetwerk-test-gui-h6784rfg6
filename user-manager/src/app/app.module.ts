@@ -14,6 +14,7 @@ import {AgGridModule} from 'ag-grid-angular/main';
 import {UserActionsComponent} from './components/users/grid/user.actions.component';
 import {DataService} from './interfaces/data.service';
 import { ModalModule } from 'ngx-bootstrap';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { ModalModule } from 'ngx-bootstrap';
     ),
     ModalModule.forRoot()
   ],
-  providers: [UserService, DataService],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, UserService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

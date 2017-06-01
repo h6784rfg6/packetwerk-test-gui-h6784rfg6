@@ -39,7 +39,6 @@ export class UsersComponent {
   ngOnInit(){
     this.userService.getUsers().subscribe(
       (users:any[]) => {
-        console.log(users);
         this.dataService.setUsers(users);
         this.gridOptions.rowData = users;
         this.gridOptions.api.setRowData(this.gridOptions.rowData)

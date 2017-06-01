@@ -1,11 +1,31 @@
 import { browser, element, by } from 'protractor';
 
 export class UserManagerPage {
-  navigateTo() {
-    return browser.get('/');
+  navigateToUsers() {
+    return browser.get('/users');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getFirstUser() {
+    return element(by.css('#details-user1'));
+  }
+
+  getAddress() {
+    return element(by.css('.address-card'));
+  }
+
+  getAlbums() {
+    return element(by.css('.albums-card'));
+  }
+
+  getFirstAlbum() {
+    return element.all(by.css('.album')).first();
+  }
+
+  getPhotos() {
+    return element.all(by.css('.photo'));
+  }
+
+  getBodyClass() {
+    return element(by.css('body.modal-open'));
   }
 }
