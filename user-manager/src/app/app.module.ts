@@ -9,7 +9,6 @@ import { routerConfig } from './routing/router.config';
 import {UserComponent} from './components/user/user.component';
 import {UsersComponent} from './components/users/users.component';
 import {AlbumComponent} from './components/album/album.component';
-import {PhotosComponent} from './components/photos/photos.component';
 import {UserService} from './interfaces/user.service';
 import {AgGridModule} from 'ag-grid-angular/main';
 import {UserActionsComponent} from './components/users/grid/user.actions.component';
@@ -18,7 +17,7 @@ import { ModalModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent, UserComponent, UsersComponent, AlbumComponent, PhotosComponent, UserActionsComponent
+    AppComponent, UserComponent, UsersComponent, AlbumComponent, UserActionsComponent
   ],
   imports: [
     BrowserModule,
