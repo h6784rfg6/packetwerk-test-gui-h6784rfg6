@@ -26,7 +26,7 @@ export class UserComponent {
     var userId:number;
 
     this.sub = this.route.params.subscribe(params => {
-      userId = +params['id'];
+      userId = +params['userId'];
     });
 
     if (!this.users) {
@@ -60,7 +60,7 @@ export class UserComponent {
   };
 
   openAlbum(album:any) {
-    this.router.navigate(['./album', {id: album["id"]}], {relativeTo: this.route});
+    this.router.navigate(['./album', {albumId: album["id"]}], {relativeTo: this.route});
   }
 
   ngOnDestroy() {

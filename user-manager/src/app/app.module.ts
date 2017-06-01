@@ -14,6 +14,7 @@ import {UserService} from './interfaces/user.service';
 import {AgGridModule} from 'ag-grid-angular/main';
 import {UserActionsComponent} from './components/users/grid/user.actions.component';
 import {DataService} from './interfaces/data.service';
+import { ModalModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {DataService} from './interfaces/data.service';
     RouterModule.forRoot(routerConfig),
     AgGridModule.withComponents(
       [UserActionsComponent]
-    )
+    ),
+    ModalModule.forRoot()
   ],
   providers: [UserService, DataService],
   bootstrap: [AppComponent]

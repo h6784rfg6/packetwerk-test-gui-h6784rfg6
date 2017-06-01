@@ -39,6 +39,17 @@ export class UserService {
       .catch(UserService.handleError);
   }
 
+  getPhotos(albumId: number) {
+    let params: URLSearchParams = new URLSearchParams();
+    params.set('albumId', albumId.toString());
+
+      return this.http.get(this.root + "/photos", {search: params})
+      .map((response:Response) => {
+        return response.json();
+      })
+      .catch(UserService.handleError);
+  }
+
   private static handleError(error:any):Observable<any> {
     return Observable.throw(error.json().message || 'Server error');
   }

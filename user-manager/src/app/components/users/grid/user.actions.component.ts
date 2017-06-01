@@ -15,6 +15,6 @@ export class UserActionsComponent {
   }
 
   openProfile(userId) {
-    this.router.navigate(['./user', { id: userId }], { relativeTo: this.route });
+    this.router.navigate(['./user', { userId: userId }], { relativeTo: this.route });
   }
 }

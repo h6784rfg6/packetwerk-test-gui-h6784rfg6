@@ -6,3 +6,21 @@
     </div>
   </div>
 </div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2" *ngFor="let photo of photos">
+      <img class="photo" [src]="photo?.thumbnailUrl" style="margin: 10px 0" (click)="setPhoto(photo); imageModal.show()"/>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" bsModal #imageModal="bs-modal" [config]="{backdrop: false}" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img class="photo-large" *ngIf="selectedPhoto" [src]="selectedPhoto?.url"/>
+      </div>
+    </div>
+  </div>
+</div>
